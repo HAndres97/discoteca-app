@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!--JS y CSS de reservas-->
     <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" type="text/css" href="css/responsiveMovil.css">
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
@@ -19,7 +20,7 @@
     <script type="text/javascript" src="js/formulario.js"></script>
 </head>
 
-<body id="body" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+<body id="body" style="font-family:Georgia, 'Times New Roman', Times, serif;  overflow-x: hidden">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 0.832);">
         <div class="container-fluid">
@@ -53,7 +54,7 @@
         </div>
     </nav>
     <!--Portada-->
-    <div style=" width: 100%;height:500px; background-image:url(img/img6.jpg); background-repeat: no-repeat; background-size: 100%;">
+    <div  class="portadaReservar"  style=" width: 100%;height:500px; background-image:url(img/img6.jpg); background-repeat: no-repeat; background-size: 100%;">
     </div>
     <!--Titulo-->
     <div class="d-flex flex-column justify-content-center align-items-center mb-4 mt-3">
@@ -61,7 +62,7 @@
     </div>
     
     <!--DIV GENERAL-->
-    <section class="w-100 d-flex flex-nowrap" style="border-top: 1px solid rgb(44, 44, 44); height: 700px;">
+    <section class="w-100 d-flex sectionReserva" style="border-top: 1px solid rgb(44, 44, 44); height: 700px;">
         <!--Calendario-->
         <div class="mt-3 mx-5 d-flex align-items-end" style="width: 500px; height: 650px;">
             <div class="wrapper mt-2 mx-2">
@@ -155,18 +156,31 @@
                                       <!--Seleccionar el dia-->
                                       <div class="mt-2">
                                         <label class="form-label">Selecciona el día:</label>
-                                        <input class="form-control form-check" type="date" id="diaCalendario" name="fecha_reserva" required>
+                                        <input class="form-control form-check" value="2023-06-12"
+                                        min="2023-06-12"type="date" id="diaCalendario" name="fecha_reserva" required>
                                       </div>
+
                                       <!--Seleccionar cuantas personas-->
                                       <div class="mt-2">
                                         <label class="form-label">Selecciona cuantas personas:</label>
-                                        <input placeholder="max:8" class="form-control form-check" type="number" id="personas" min="1" max="8" name="n_personas"required>
-                                      </div>
+                            
+                                        <select class="form-select" type="number" id="personas" min="1" max="8" name="n_personas"required onclick="PrecioPersona()">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                        </select>
+                                    </div>
                                       <!--Total a pagar-->
                                       <div class="mt-2">
                                         <label class="form-label">Total a pagar:</label>
-                                        <input class="form-control form-check bi bi-currency-dollar" type="number" id="total" name="total_pagar" readonly onclick="PrecioPersona()">
+                                        <input class="form-control form-check bi bi-currency-dollar" type="number" id="total" name="total_pagar" readonly value="140" >
                                       </div>
+
                                       <!--Boton-->
                                       <div class="d-flex justify-content-center mt-4">
                                             <button class="btn btn-outline-dark" id="btnCalcular1" type="submit">Continuar</button>
@@ -216,12 +230,21 @@
                                         <!--Seleccionar cuantas personas-->
                                         <div class="mt-2">
                                             <label class="form-label">Selecciona cuantas personas:</label>
-                                            <input placeholder="max:8" class="form-control form-check" type="number" id="prs" min="1" max="8" name="n_personas"required>
+                                            <select class="form-select" type="number" id="prs" min="1" max="8" name="n_personas"required onclick="PrecioPersona()">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                              </select>
                                         </div>
                                         <!--Total a pagar-->
                                         <div class="mt-2">
                                             <label class="form-label">Total a pagar:</label>
-                                            <input class="form-control form-check bi bi-currency-dollar" type="number" id="tot" name="total_pagar" readonly onclick="PrecioPersona()">
+                                            <input class="form-control form-check bi bi-currency-dollar" type="number" id="tot" name="total_pagar" readonly value="160" >
                                         </div>
                                         <!--Boton-->
                                         <div class="d-flex justify-content-center mt-4">
@@ -270,12 +293,21 @@
                                       <!--Seleccionar cuantas personas-->
                                       <div class="mt-2">
                                         <label class="form-label">Selecciona cuantas personas:</label>
-                                        <input placeholder="max:8" class="form-control form-check" type="number" id="prsPalco" min="1" max="8" name="n_personas"required>
+                                        <select class="form-select" type="number" id="prsPalco" min="1" max="8" name="n_personas"required onclick="PrecioPersona()">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                          </select>
                                       </div>
                                       <!--Total a pagar-->
                                       <div class="mt-2">
                                         <label class="form-label">Total a pagar:</label>
-                                        <input class="form-control form-check bi bi-currency-dollar" type="number" id="tot_palco" name="total_pagar" readonly onclick="PrecioPersona()">
+                                        <input class="form-control form-check bi bi-currency-dollar" type="number" id="tot_palco" name="total_pagar" readonly value="190" >
                                       </div>
                                       <!--Boton-->
                                       <div class="d-flex justify-content-center mt-4">
@@ -294,77 +326,84 @@
                 </div>
         </div>
     </section>
-
+    <div class="lineaReservar"></div>
     <!--Footer-->
-    <div class="w-100 mt-5 d-flex flex-wrap"
-        style="height: 220px;border: 1px solid rgb(246, 246, 246); background-color: rgb(245, 222, 179);">
-        <div class="w-100 h-50 d-flex flex-nowrap">
-            <!--Logo-->
-            <div class="w-25" style="text-align: center;">
-                <a href="discoteca" title="Ir a Inicio">
-                    <img src="img/logo.png">
-                </a>
-            </div>
-            <!-- Telefono-->
-            <div class="w-50 d-flex flex-column justify-content-center align-items-center">
-                <a class="text-decoration-none" style="color: rgb(9, 9, 9); font-size: x-large; font-weight: bold;"
-                    href="tel:+34616553227" alt="contactar" title="Contactar por Telefono">
-                    +34 616 553 227
-                </a>
-            </div>
-            <!--Ubicacion-->
-            <div class="w-25 d-flex justify-content-center align-items-center">
-                <p class="mt-3" style="color: rgb(23, 23, 23); font-size: larger;">C. de Francisco Brizuela, 3,
-                    28011 Madrid</p>
-            </div>
+  <footer class="w-100 mt-5"
+  style="border: 1px solid rgb(246, 246, 246); background-color: rgb(245, 222, 179);">
+  <div class="row">
+      <!--Logo-->
+      <div class="col-md-3 col-lg-5 col-xl-5 col-sm-3 mt-2">
+          <a href="discoteca" title="Ir a la página de Inicio"><img src="img/logo.png"></a>
+      </div>
 
-        </div>
-        <!--Created by-->
-        <div class="w-25 d-flex justify-content-center align-items-center">
-            <p class="mt-3" style="color: rgb(16, 16, 16); font-size: larger;">Created by Diego, Elias & Christian
-            </p>
-        </div>
-        <!-- Redes Sociales -->
-        <div class="w-50 d-flex flex-nowrap" style="justify-content: center; align-items: center;">
-            <div>
-                <!-- Facebook -->
-                <a class="btn text-white btn-floating m-1" title="Facebook" target="_blank"
-                    style="background-color: #3b5998;" href="https://www.facebook.com/fpjoseramonotero" role="button">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <!-- Twitter -->
-                <a class="btn text-white btn-floating m-1" title="Twitter" target="_blank"
-                    style="background-color: #55acee;" href="https://twitter.com/FPJROtero" role="button">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <!-- Instagram -->
-                <a class="btn text-white btn-floating m-1" title="Instagram" target="_blank"
-                    style="background-color: #ac2bac;" href="https://www.instagram.com/fpjrotero/" role="button"><i
-                        class="bi bi-instagram"></i>
-                </a>
-                <!--E-mail-->
-                <a class="btn text-white btn-floating m-1" title="Gmail" target="_blank"
-                    style="background-color: #fb0101;" href="mailto:d.faria@a.jrotero.es" role="button">
-                    <i class="bi bi-google"></i>
-                </a>
-            </div>
-            <!--Copy-->
-        </div>
-        <div class="w-25 d-flex justify-content-center align-items-center">
-<p  style=" color: rgb(0, 0, 0);">Copyright<span style="font-size: small;">© </span>2023</p>
-        </div>
-        <!--LINKS-->
-        <div class="w-100 d-flex justify-content-evenly" style="align-self: end; border-top: 1px solid grey;">
-            <a href class="text-decoration-none link-secondary">FAQS</a>
-            <a href class="text-decoration-none link-secondary">CONDICIONES
-                GENERALES</a>
-            <a href class="text-decoration-none link-secondary">CONDICIONES DE
-                COMPRA</a>
-            <a href class="text-decoration-none link-secondary">PRIVACIDAD</a>
-            <a href class="text-decoration-none link-secondary">AVISO LEGAL</a>
-        </div>
-    </div>
-    </div>
+      <!--Telefono-->
+      <div class=" col-md-4 col-lg-4 col-xl-5 col-sm-4  mt-4">
+          <a class="text-decoration-none" style="color: rgb(9, 9, 9); font-size: x-large; font-weight: bold;"
+              href="tel:+34616553227" alt="contactar" title="Contactar por Telefono">
+              +34 616 553 227
+          </a>
+      </div>
+      <!--Ubicacion-->
+      <div class="col-md-5 col-lg-3 col-xl-2 col-sm-5 mt-3">
+          <p class="mt-3" style="color: rgb(23, 23, 23); font-size: larger;">C. de Francisco Brizuela, 3, 28011
+              Madrid</p>
+      </div>
+  </div>
+  <div class="row">
+      <!--Created by-->
+      <div class="col-md-3 col-lg-5 col-xl-5 col-sm-4 mt-2">
+          <p class="mt-3" style="color: rgb(16, 16, 16); font-size: larger;">Created by Diego, Elias & Christian
+          </p>
+      </div>
+      <!-- Redes Sociales -->
+      <div class="col-md-5 col-lg-4 col-xl-5 col-sm-5 mt-2">
+          <!-- Facebook -->
+          <a class="btn text-white btn-floating m-1" title="Facebook" target="_blank"
+              style="background-color: #3b5998;" href="https://www.facebook.com/fpjoseramonotero" role="button">
+              <i class="bi bi-facebook"></i>
+          </a>
+          <!-- Twitter -->
+          <a class="btn text-white btn-floating m-1" title="Twitter" target="_blank"
+              style="background-color: #55acee;" href="https://twitter.com/FPJROtero" role="button">
+              <i class="bi bi-twitter"></i>
+          </a>
+          <!-- Instagram -->
+          <a class="btn text-white btn-floating m-1" title="Instagram" target="_blank"
+              style="background-color: #ac2bac;" href="https://www.instagram.com/fpjrotero/" role="button"><i
+                  class="bi bi-instagram"></i>
+          </a>
+          <!--E-mail-->
+          <a class="btn text-white btn-floating m-1" title="Gmail" target="_blank"
+              style="background-color: #fb0101;" href="mailto:d.faria@a.jrotero.es" role="button">
+              <i class="bi bi-google"></i>
+          </a>
+      </div>
+      <!--Copy-->
+      <div class="col-md-2 col-lg-2 col-xl-1 col-sm-3 mt-2">
+          <p style=" color: rgb(0, 0, 0);">Copyright<span style="font-size: small;">© </span>2023</p>
+      </div>
+  </div>
+  <div class="row mx-auto m-auto" style="border-top: 1px solid grey;">
+      <!--Links-->
+      <div class="col-md-3 col-lg-5 col-xl-2 col-sm-3 mt-2">
+          <a href class="text-decoration-none link-secondary">FAQS</a>
+      </div>
+      <div class="col-md-3 col-lg-5 col-xl-3 col-sm-3 mt-2">
+          <a href class="text-decoration-none link-secondary">CONDICIONES
+              GENERALES</a>
+      </div>
+      <div class="col-md-3 col-lg-5 col-xl-3 col-sm-3 mt-2">
+          <a href class="text-decoration-none link-secondary">CONDICIONES DE
+              COMPRA</a>
+      </div>
+      <div class="col-md-3 col-lg-5 col-xl-2 col-sm-3 mt-2">
+          <a href class="text-decoration-none link-secondary">PRIVACIDAD</a>
+      </div>
+      <div class="col-md-3 col-lg-5 col-xl-2 col-sm-3 mt-2">
+          <a href class="text-decoration-none link-secondary">AVISO LEGAL</a>
+      </div>
+  </div>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
         integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
         </script>

@@ -1,0 +1,126 @@
+
+
+@media screen and (max-width: 1199px) {
+    footer{
+        height: 300px;
+    }
+    #carouselExampleCaptions{
+        margin-top: 70px;
+    }
+    #carouselExampleCaptions img{
+        height: 160px;
+    }
+    
+}
+@media screen and (min-width: 901px){
+    .eventoCartas{
+        width: 290px;
+        height: 500px;
+    }
+    .eventoCartas img{
+        background-size: 100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .eventoCartas{
+        width: 290px;
+        height: 500px;
+    }
+    .eventoCartas img{
+        background-size: 100%;
+    }
+}
+@media screen and (min-width: 800px){
+    #zonaReservar{
+        height: 600px;
+    }
+    #zonaReservar button{
+        margin-bottom: 100px;
+    }
+    .eventoCartas{
+        width: 290px;
+        height: 500px;
+    }
+    .eventoCartas img{
+        background-size: 100%;
+    }
+    
+}
+@media screen and (max-width: 674px) {
+    footer{
+        height: 320px;
+    }
+    #zonaReservar{
+        height: 800px;
+    }
+    #zonaReservar{
+        height: 200px;
+    }
+    #zonaReservar button{
+        margin-bottom: 30px;
+    }
+    #tituloEventos{
+        font-size: 30px;
+    }
+    .raya{
+        display: block;
+    }
+    .eventoCartas{
+        width: 250px;
+        height: 415px;
+        font-size: 65%;
+        margin-bottom: 10px;
+    }
+    .eventoCartas img{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 576px) {
+    footer{
+        text-align: center;
+        height: 580px;
+    }
+    .eventoCartas{
+        width: 250px;
+        height: 200px;
+        font-size: 65%;
+        margin-bottom: 10px;
+    }
+    .eventoCartas img{
+        display: none;
+    }
+    .linea{
+        width: 100%;
+        height: 100px;
+    }
+    .fondoEventos{
+        margin-top: 70px;
+    }
+    #tituloEventos{
+        margin-top: 300px;
+        font-size: 30px;
+    }
+    .portadaReservar{
+        margin-top: 70px;
+    }
+   .sectionReserva{
+    flex-direction: column;
+   }
+   .lineaReservar{
+    height: 410px;
+   }
+   .portadaContacto{
+    margin-top: 70px;
+   }
+   .contacto{
+    margin-top: 100px;
+    flex-wrap: wrap;
+    font-size: 10px;
+   }
+   .lineaContacto{
+    width: 100%;
+    height: 500px;
+   }
+   
+}

@@ -11,5 +11,8 @@
     </head>
     <body>
         <h2 class="text-center">Tu compra se ha realizado Correctamente {{$name}}</h2>
+        <div class="container" >
+            <img src="img/Flyer_Tekila.png" width="700px" class="mx-auto d-block">
+          </div>
     </body>
 </html>

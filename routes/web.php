@@ -28,9 +28,3 @@ Route::controller(DiscotecaController::class)->group(function(){
     Route::post('pasarela_pago','pasarela_pago');
 
 });
-
-/*Route::get('recibos',function(){
-    $correo = new ReciboMailable;
-    Mail::to('hchristianandres@gmail.com')->send($correo);
-    return "Mensaje Enviado";
-});*/
